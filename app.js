@@ -9,7 +9,8 @@ var cors = require('cors');
 var index = require('./routes/index');
 var users = require('./routes/users');
 var dic = require('./routes/dic');
-
+var ocr = require('./routes/ocr');
+var result = require('./routes/result');
 
 var app = express();
 
@@ -30,6 +31,8 @@ app.options('*', cors());
 app.use('/', index);
 app.use('/users', users);
 app.use('/dic', dic);
+app.use('/ocr', ocr);
+app.use('/result', result);
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
@@ -48,7 +51,5 @@ app.use(function(err, req, res, next) {
   res.status(err.status || 500);
   res.render('error');
 });
-
-console.log("git test");
 
 module.exports = app;
