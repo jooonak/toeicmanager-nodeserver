@@ -19,7 +19,12 @@ router.post('/', function(req, res, next) {
     //console.log(req.fields); // contains non-file fields
     //console.log(req.files); // contains files
 
+    //console.log(req.fields.file);
+    //console.log(req.files.file.path);
     const fileName = req.files.file.path;
+    //console.log("1111111111"+fileName);
+
+    //const fileName = "data:image/jpeg;base64,"+req.fields.file.path;
 
     //Error: Can't set headers after they are sent.에 대한 내용은 아래 url을 따라 가보자
     //https://stackoverflow.com/questions/7042340/error-cant-set-headers-after-they-are-sent-to-the-client 
