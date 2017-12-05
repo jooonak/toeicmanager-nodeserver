@@ -5,7 +5,7 @@ router.use(formidable());
 // Imports the Google Cloud client library
 const Vision = require('@google-cloud/vision');
 
-// Creates a client
+// Creates a clientthdn
 const vision = new Vision();
 
 
