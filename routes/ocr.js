@@ -28,9 +28,9 @@ router.post('/', function(req, res, next) {
         .then((results) => {
         const fullTextAnnotation = results[0].fullTextAnnotation;
     //console.log(fullTextAnnotation.text);
-    //var text =fullTextAnnotation.text;
-    //res.json(text);
-    res.json(fullTextAnnotation.text);
+    var text =fullTextAnnotation.text;
+    res.json(text);
+    //res.json(fullTextAnnotation.text);
     }).catch((err) => {
             console.error('ERROR:', err);
     });
