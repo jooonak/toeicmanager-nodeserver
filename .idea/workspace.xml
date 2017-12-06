@@ -2,7 +2,24 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="4880bd9d-13e7-4b19-8b85-4c1d477b4185" name="Default" comment="">
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/node_modules/grpc/src/node/extension_binary/node-v57-win32-x64-unknown/grpc_node.node" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/My New Project Vision API-5759606a1e2d.json" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/node_modules/gtoken/node_modules/mime/.npmignore" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/node_modules/gtoken/node_modules/mime/CHANGELOG.md" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/node_modules/gtoken/node_modules/mime/src/build.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/node_modules/gtoken/node_modules/mime/src/test.js" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/node_modules/grpc/src/node/extension_binary/node-v57-win32-x64/grpc_node.node" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/node_modules/gtoken/node_modules/mime/build/build.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/node_modules/gtoken/node_modules/mime/build/test.js" afterPath="" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/@google-cloud/vision/package.json" afterPath="$PROJECT_DIR$/node_modules/@google-cloud/vision/package.json" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/grpc/ext/completion_queue.cc" afterPath="$PROJECT_DIR$/node_modules/grpc/ext/completion_queue.cc" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/grpc/package.json" afterPath="$PROJECT_DIR$/node_modules/grpc/package.json" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/gtoken/node_modules/mime/package.json" afterPath="$PROJECT_DIR$/node_modules/gtoken/node_modules/mime/package.json" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/gtoken/node_modules/mime/types.json" afterPath="$PROJECT_DIR$/node_modules/gtoken/node_modules/mime/types.json" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/package-lock.json" afterPath="$PROJECT_DIR$/package-lock.json" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/routes/ocr.js" afterPath="$PROJECT_DIR$/routes/ocr.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/views/ocr.html" afterPath="$PROJECT_DIR$/views/ocr.html" />
     </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
     <ignored path="$PROJECT_DIR$/temp/" />
@@ -73,7 +90,6 @@
         <option value="$PROJECT_DIR$/app.js" />
         <option value="$PROJECT_DIR$/routes/ocr.js" />
         <option value="$PROJECT_DIR$/views/ocr.html" />
-        <option value="$PROJECT_DIR$/new project.json" />
       </list>
     </option>
   </component>
@@ -89,8 +105,8 @@
     <handled-path value="$PROJECT_DIR$/node_modules" />
   </component>
   <component name="ProjectFrameBounds" extendedState="6">
-    <option name="x" value="-1688" />
-    <option name="y" value="-8" />
+    <option name="x" value="512" />
+    <option name="y" value="213" />
     <option name="width" value="974" />
     <option name="height" value="1047" />
   </component>
@@ -110,8 +126,6 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="Scope" />
-      <pane id="Scratches" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -144,6 +158,8 @@
           <select />
         </subPane>
       </pane>
+      <pane id="Scope" />
+      <pane id="Scratches" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -206,21 +222,13 @@
       <workItem from="1511250052643" duration="9857000" />
       <workItem from="1511333945262" duration="54000" />
       <workItem from="1511742539568" duration="3019000" />
-      <workItem from="1512435069662" duration="205000" />
-      <workItem from="1512527915504" duration="329000" />
+      <workItem from="1512435069662" duration="64000" />
+      <workItem from="1512528275012" duration="175000" />
     </task>
-    <task id="LOCAL-00001" summary="1. commit">
-      <created>1512435150147</created>
-      <option name="number" value="00001" />
-      <option name="presentableId" value="LOCAL-00001" />
-      <option name="project" value="LOCAL" />
-      <updated>1512435150147</updated>
-    </task>
-    <option name="localTasksCounter" value="2" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="33308000" />
+    <option name="totallyTimeSpent" value="33013000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -232,14 +240,14 @@
     </todo-panel>
   </component>
   <component name="ToolWindowManager">
-    <frame x="-1928" y="-8" width="1936" height="1056" extended-state="6" />
+    <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
     <layout>
       <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.17860906" sideWeight="0.5" order="3" side_tool="false" content_ui="combo" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32934782" sideWeight="0.49789253" order="9" side_tool="false" content_ui="tabs" />
-      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.39173013" sideWeight="0.44520548" order="0" side_tool="true" content_ui="tabs" />
+      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.3297062" sideWeight="0.5021075" order="0" side_tool="true" content_ui="tabs" />
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.39499456" sideWeight="0.55479455" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="npm" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="true" content_ui="tabs" />
-      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.3297062" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.3297062" sideWeight="0.49789253" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33188248" sideWeight="0.8840885" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
@@ -284,10 +292,6 @@
   </component>
   <component name="VcsContentAnnotationSettings">
     <option name="myLimit" value="2678400000" />
-  </component>
-  <component name="VcsManagerConfiguration">
-    <MESSAGE value="1. commit" />
-    <option name="LAST_COMMIT_MESSAGE" value="1. commit" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>

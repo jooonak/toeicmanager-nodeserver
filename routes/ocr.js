@@ -5,7 +5,7 @@ router.use(formidable());
 // Imports the Google Cloud client library
 const Vision = require('@google-cloud/vision');
 
-// Creates a client
+// Creates a clientthdn
 const vision = new Vision();
 
 
@@ -32,7 +32,7 @@ router.post('/', function(req, res, next) {
     vision.documentTextDetection({ source: { filename: fileName } })
         .then((results) => {
         const fullTextAnnotation = results[0].fullTextAnnotation;
-    console.log(fullTextAnnotation.text);
+    //console.log(fullTextAnnotation.text);
     var text =fullTextAnnotation.text;
     res.json(text);
     //res.json(fullTextAnnotation.text);
