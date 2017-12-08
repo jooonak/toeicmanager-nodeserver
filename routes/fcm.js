@@ -15,8 +15,7 @@ var serviceAccount = {
         "token_uri": "https://accounts.google.com/o/oauth2/token",
         "auth_provider_x509_cert_url": "https://www.googleapis.com/oauth2/v1/certs",
         "client_x509_cert_url": "https://www.googleapis.com/robot/v1/metadata/x509/firebase-adminsdk-w865i%40fcmtest-670f6.iam.gserviceaccount.com"
-    }
-;
+    };
 
 admin.initializeApp({
     credential: admin.credential.cert(serviceAccount),
@@ -40,9 +39,9 @@ firebase.initializeApp(config);
 /* GET home page. */
 router.get('/', function(req, res, next) {
 
-    console.log("init........................")
+    console.log("init........................");
     // These registration tokens come from the client FCM SDKs.
-    var registrationTokens = req.query.token;
+    var registrationTokens = "fp18N8UhPIA:APA91bE4gPHi164r3qGNomEZwdTfNL1ExVNtMZ05OyQRm6ZYCUF_uVZKv0L_F1ouQz7MZRU1IG9Jn0YMG5u184Nk-DTV2TRW2WpRBJUEvRDgstAjjz2w91TLJ841kfBXWPLof3AT0W6f";
 
     console.log("body: " + req.query.token);
     // See the "Defining the message payload" section below for details
@@ -90,33 +89,3 @@ router.get('/', function(req, res, next) {
 });
 
 module.exports = router;
-
-// //이 함수는 데이터베이스에서 토큰을 받아온다 -> 로컬스토리지에서 가져오는 방식으로 변경필요
-// firebase.database().ref('/tokens').once('value').then(function(snapshot) {
-
-//     snapshot.forEach(function(child) {
-
-//         var tokenObject = child.val();
-//         console.log(tokenObject);
-
-//         var registrationToken = tokenObject.token;
-
-//         fetch('https://fcm.googleapis.com/fcm/send', {
-//             'method': 'POST',
-//             'headers': {
-//                 'Authorization': 'key=' + key,
-//                 'Content-Type': 'application/json'
-//             },
-//             'body': JSON.stringify({
-//                 'notification': notification,
-//                 'to': registrationToken
-//             })
-//         }).then(function(response) {
-//             console.log(response);
-//         }).catch(function(error) {
-//             console.error(error);
-//         })
-
-//     });
-// });
-
