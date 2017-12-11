@@ -41,7 +41,7 @@ router.get('/', function(req, res, next) {
 
     console.log("init........................");
     // These registration tokens come from the client FCM SDKs.
-    var registrationTokens = "fp18N8UhPIA:APA91bE4gPHi164r3qGNomEZwdTfNL1ExVNtMZ05OyQRm6ZYCUF_uVZKv0L_F1ouQz7MZRU1IG9Jn0YMG5u184Nk-DTV2TRW2WpRBJUEvRDgstAjjz2w91TLJ841kfBXWPLof3AT0W6f";
+    var registrationTokens = req.query.token;//"fp18N8UhPIA:APA91bE4gPHi164r3qGNomEZwdTfNL1ExVNtMZ05OyQRm6ZYCUF_uVZKv0L_F1ouQz7MZRU1IG9Jn0YMG5u184Nk-DTV2TRW2WpRBJUEvRDgstAjjz2w91TLJ841kfBXWPLof3AT0W6f";
 
     console.log("body: " + req.query.token);
     // See the "Defining the message payload" section below for details
@@ -57,33 +57,36 @@ router.get('/', function(req, res, next) {
         }
     };
 
-    // Send a message to the devices corresponding to the provided
-    // registration tokens.
-    admin.messaging().sendToDevice(registrationTokens, payload)
-        .then(function(res) {
-            // See the MessagingDevicesResponse reference documentation for
-            // the contents of response.
-            console.log("Successfully sent message:", res);
-        })
-        .catch(function(error) {
-            console.log("Error sending message:", error);
-        });
+    setTimeout(pushMesseging, 10 * 60 * 1000); //시험 본 후 10분 뒤 알림 발송
+    function pushMesseging() {
+        // Send a message to the devices corresponding to the provided
+        // registration tokens.
+        admin.messaging().sendToDevice(registrationTokens, payload)
+            .then(function(res) {
+                // See the MessagingDevicesResponse reference documentation for
+                // the contents of response.
+                console.log("Successfully sent message:", res);
+            })
+            .catch(function(error) {
+                console.log("Error sending message:", error);
+            });
 
-    fetch('https://fcm.googleapis.com/fcm/send', {
-        'method': 'POST',
-        'headers': {
-            'Authorization': 'key=' + key,
-            'Content-Type': 'application/json'
-        },
-        'body': JSON.stringify({
-            'notification': payload,
-            'to': registrationTokens
+        fetch('https://fcm.googleapis.com/fcm/send', {
+            'method': 'POST',
+            'headers': {
+                'Authorization': 'key=' + key,
+                'Content-Type': 'application/json'
+            },
+            'body': JSON.stringify({
+                'notification': payload,
+                'to': registrationTokens
+            })
+        }).then(function(response) {
+            console.log(response);
+        }).catch(function(error) {
+            console.error(error);
         })
-    }).then(function(response) {
-        console.log(response);
-    }).catch(function(error) {
-        console.error(error);
-    })
+    }
 
     res.json({result : "success"});
 });
