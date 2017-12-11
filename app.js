@@ -11,6 +11,9 @@ var users = require('./routes/users');
 var dic = require('./routes/dic');
 var ocr = require('./routes/ocr');
 var result = require('./routes/result');
+var fcm = require('./routes/fcm');
+// var autofcm = require('./routes/fcmschedule');
+var crawling = require('./routes/crawling');
 
 var app = express();
 
@@ -18,7 +21,7 @@ var app = express();
 app.set('views', path.join(__dirname, 'views'));
 app.set('view engine', 'ejs');
 
-// uncomment after placing your favicon in /public
+// uncomment after placing your favicon in /publicrameter settimeout
 //app.use(favicon(path.join(__dirname, 'public', 'favicon.ico')));
 app.use(logger('dev'));
 app.use(bodyParser.json());
@@ -34,6 +37,9 @@ app.use('/users', users);
 app.use('/dic', dic);
 app.use('/ocr', ocr);
 app.use('/result', result);
+app.use('/fcm', fcm);
+app.use('/crawling', crawling);
+// app.use(autofcm);
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
