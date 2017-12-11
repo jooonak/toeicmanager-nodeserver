@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+<h1>Title</h1>
+<p>Welcome to title </p>
+
+<div>
+    <input type="file" class="img" name="fileToUpload">
+</div>
+
+<button class="btn"> 문자 뽑아내기!!</button>
+
+<div class="resultText">
+</div>
+<script type="text/javascript" src="../public/javascripts/jquery-3.2.1.min.js"></script>
+<script type="text/javascript">
+    $(document).ready(function () {
+
+        $(".btn").on("click",function(e) {
+
+            var formData = new FormData();
+
+            formData.set('file', $(".img")[0].files[0]);
+
+            //console.log(formData);
+            //console.log(formData.get('file'));
+
+            $.ajax({
+                url : 'http://192.168.0.22:3000/ocr',
+                data : formData,
+                dataType : 'json',
+                processData : false,
+                contentType : false,
+                type : 'POST',
+                success : function(response) {
+                    //console.log(response);
+                    document.querySelector(".resultText").innerHTML += "<h1>"+response+"</h1>"
+
+                }
+
+            });
+
+        });
+    });
+
+</script>
+
+</body>
+</html>
