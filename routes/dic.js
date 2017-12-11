@@ -17,6 +17,7 @@ router.get('/', function(req, res, next) {
         },
         function (err, response, body) {
             var bodyparse = JSON.parse(body);
+            console.log(bodyparse);
             var resultdata = bodyparse.tuc[0].phrase.text;
             res.json(resultdata);
         }
