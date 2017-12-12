@@ -6,23 +6,23 @@ var request = require('request');
 /* GET home page. */
 router.get('/sentences', function(req, res, next) {
 
-    var word = req.query.word;
+    var words = req.query.words;
 
-    function getSentences(word, callback) {
-        var url = 'https://en.oxforddictionaries.com/definition/' + word;
+    function getSentences(words, callback) {
+        var url = 'https://en.oxforddictionaries.com/definition/' + words;
         request(url, function (err, response, html) {
             if (err) {console.log(err)};
 
             var $ = cheerio.load(html);
             var text = $('.ex').text();
             var sentences = [];
-            for (var i = 0; i < 5; i++ ){
+            for (var i = 0; i < 3; i++ ){
                 sentences.push(text.substring(2, text.length -1).split('’ ‘')[i]);
             }
             return callback(sentences);
         });
     }
-    getSentences(word, function (result) {
+    getSentences(words, function (result) {
         res.json({sentences : result});
     })
 });
@@ -56,12 +56,12 @@ router.get('/sentences', function(req, res, next) {
 //     })
 // });
 
-router.get('/img', function(req, res, next) {
+router.get('/imgs', function(req, res, next) {
 
-    var word = req.query.word;
+    var words = req.query.words;
 
-    function getImgsSrc(word, callback) {
-        var url = 'https://www.google.co.kr/search?q=' + word + '&source=lnms&tbm=isch&sa=X&ved=0ahUKEwj33Y7qofnXAhVCl5QKHUimBFEQ_AUICygC&biw=1121&bih=949';
+    function getImgsSrc(words, callback) {
+        var url = 'https://www.google.co.kr/search?q=' + words + '&source=lnms&tbm=isch&sa=X&ved=0ahUKEwj33Y7qofnXAhVCl5QKHUimBFEQ_AUICygC&biw=1121&bih=949';
         request(url, function( err, response, html ){
             if (err) {console.log(err)};
 
@@ -78,7 +78,7 @@ router.get('/img', function(req, res, next) {
         });
     }
 
-    getImgsSrc(word, function (result) {
+    getImgsSrc(words, function (result) {
         res.json({imgs : result});
     });
 });
