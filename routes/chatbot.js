@@ -2,7 +2,7 @@ var express = require('express');
 var router = express.Router();
 var request = require('request');
 var uuid = require('uuid-v4');
-var mapper = require("./mapper.js");
+var mapper = require("./mapper/chatbotMapper.js");
 
 
 var story_id = "59fbe0fb65d44027b9456104";
