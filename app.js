@@ -14,6 +14,7 @@ var result = require('./routes/result');
 var fcm = require('./routes/fcm');
 // var autofcm = require('./routes/fcmschedule');
 var crawling = require('./routes/crawling');
+var chatbot = require('./routes/chatbot');
 
 var app = express();
 
@@ -39,6 +40,7 @@ app.use('/ocr', ocr);
 app.use('/result', result);
 app.use('/fcm', fcm);
 app.use('/crawling', crawling);
+app.use('/chatbot', chatbot);
 // app.use(autofcm);
 
 // catch 404 and forward to error handler

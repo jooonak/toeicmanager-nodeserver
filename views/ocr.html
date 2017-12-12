@@ -17,8 +17,7 @@
 
 <div class="resultText">
 </div>
-
-<script type="text/javascript" src="http://192.168.0.28:3000/javascripts/jquery-3.2.1.min.js"></script>
+<script type="text/javascript" src="../public/javascripts/jquery-3.2.1.min.js"></script>
 <script type="text/javascript">
     $(document).ready(function () {
 
@@ -32,7 +31,7 @@
             //console.log(formData.get('file'));
 
             $.ajax({
-                url : 'http://192.168.0.28:3000/ocr',
+                url : 'http://192.168.0.22:3000/ocr',
                 data : formData,
                 dataType : 'json',
                 processData : false,
