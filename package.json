@@ -17,6 +17,7 @@
     "morgan": "~1.9.0",
     "natural": "^0.5.4",
     "request": "^2.83.0",
-    "serve-favicon": "~2.4.5"
+    "serve-favicon": "~2.4.5",
+    "uuid-v4": "^0.1.0"
   }
 }
