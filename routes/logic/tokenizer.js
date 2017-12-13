@@ -18,29 +18,32 @@
 * */
 var natural = require('natural');
 var tokenizer = new natural.WordTokenizer();
-
-module.exports.tokenizeText = function (text) {
+var callbackFunction;
+module.exports.tokenizeText = function (text, callback) {
+    callbackFunction = callback;
     return tokenizer.tokenize(text,test);
 }
 
-function test (tokens){
-     /*
-    console.log("test callback:"+tokens);
-    console.log(tokens.length);
-    */
+function test (tokens) {
+    /*
+   console.log("test callback:"+tokens);
+   console.log(tokens.length);
+   */
     var i;
     var result =[];
     obj = {};
     var token = "";
     for(i=0; i < tokens.length ; i++){
         token = tokens[i].toLowerCase();
-        if((tokens[i].length === 1) || token === 'i' || token ===  'my' || token ===  "me" || token ===  "mine" ||
+        if((token.length <= 2) || !(isNaN(token)) ||
+            token === 'i' || token ===  'my' || token ===  "me" || token ===  "mine" ||
             token ===  "you" || token ===  "your" || token ===  "yours" ||  token ===  "re" ||
             token ===  "he" || token ===  "his" || token ===  "him" ||
             token ===  "she" || token ===  "her" ||
             token ===  "an" || token ===  "the"||
             token ===  "or" || token ===  "and"
         ){
+            console.log("check data: " + token);
             continue;
         }
 
@@ -60,6 +63,6 @@ function test (tokens){
         result.push(i);
     }
     console.log("result:" + result);
-    callback(result);
+    callbackFunction(result);
 };
 
