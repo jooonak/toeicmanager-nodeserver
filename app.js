@@ -12,7 +12,7 @@ var dic = require('./routes/dic');
 var ocr = require('./routes/ocr');
 var result = require('./routes/result');
 var fcm = require('./routes/fcm');
-// var autofcm = require('./routes/fcmschedule');
+var autofcm = require('./routes/fcmSchedule');
 var crawling = require('./routes/crawling');
 var chatbot = require('./routes/chatbot');
 
@@ -41,7 +41,6 @@ app.use('/result', result);
 app.use('/fcm', fcm);
 app.use('/crawling', crawling);
 app.use('/chatbot', chatbot);
-// app.use(autofcm);
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {

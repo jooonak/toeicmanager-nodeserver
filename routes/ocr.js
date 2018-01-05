@@ -17,13 +17,8 @@ router.get('/', function(req, res, next) {
 
 
 router.post('/', function(req, res, next) {
-    //console.log(req.fields); // contains non-file fields
-    //console.log(req.files); // contains files
-    //console.log(req.fields.file);
-    //console.log(req.files.file.path);
     const fileName = req.files.file.path;
     console.log(fileName);
-    //console.log("1111111111"+fileName);
 
     //const fileName = "data:image/jpeg;base64,"+req.fields.file.path;
 
@@ -45,10 +40,6 @@ router.post('/', function(req, res, next) {
             console.error('ERROR:', err);
             res.json("recapture");
     });
-
-
-
-
 
 //label(사진 특징) code
 
@@ -78,11 +69,6 @@ res.json(text);
 console.error('ERROR:', err);
 });*/
 
-
-
 });
-
-
-
 
 module.exports = router;

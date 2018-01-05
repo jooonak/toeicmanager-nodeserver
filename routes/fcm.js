@@ -48,8 +48,8 @@ router.get('/', function(req, res, next) {
     // on how to define a message payload.
     var payload = {
         notification : {
-            title: 'test firebase',
-            body: '이거 좀 재미없음..',
+            // title: 'test firebase',
+            body: '모르는단어를 다시 한번 확인해주세요!',
             sound : "default",
             click_action : "FCM_PLUGIN_ACTIVITY",
             icon: 'firebase-logo.png',
@@ -87,7 +87,7 @@ router.get('/', function(req, res, next) {
             console.error(error);
         })
     }
-
+    pushMesseging();
     res.json({result : "success"});
 });
 

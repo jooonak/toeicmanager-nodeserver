@@ -21,6 +21,7 @@
     "mysql": "^2.15.0",
     "natural": "^0.5.4",
     "node-fetch": "^1.7.3",
+    "node-schedule": "^1.2.5",
     "request": "^2.83.0",
     "serve-favicon": "~2.4.5",
     "uuid-v4": "^0.1.0"

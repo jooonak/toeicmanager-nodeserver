@@ -3,58 +3,58 @@ var router = express.Router();
 var cheerio = require('cheerio');
 var request = require('request');
 
-/* GET home page. */
-router.get('/sentences', function(req, res, next) {
-
-    var words = req.query.words;
-
-    function getSentences(words, callback) {
-        var url = 'https://en.oxforddictionaries.com/definition/' + words;
-        request(url, function (err, response, html) {
-            if (err) {console.log(err)};
-
-            var $ = cheerio.load(html);
-            var text = $('.ex').text();
-            var sentences = [];
-            for (var i = 0; i < 3; i++ ){
-                sentences.push(text.substring(2, text.length -1).split('’ ‘')[i]);
-            }
-            return callback(sentences);
-        });
-    }
-    getSentences(words, function (result) {
-        res.json({sentences : result});
-    })
-});
-
-// 문장 크롤링 가능한 사이트2 위와 아래 중 선택해서 사용 가능
+// 문장 크롤링 가능한 사이트1
 // router.get('/sentences', function(req, res, next) {
 //
-//     var word = req.query.word;
+//     var words = req.query.words;
 //
-//     function getSentences(word, callback) {
-//         var url = 'http://sentence.yourdictionary.com/' + word;
+//     function getSentences(words, callback) {
+//         var url = 'https://en.oxforddictionaries.com/definition/' + words;
 //         request(url, function (err, response, html) {
 //             if (err) {console.log(err)};
 //
 //             var $ = cheerio.load(html);
+//             var text = $('.ex').text();
 //             var sentences = [];
-//
-//             $('.li_content').each(function (index, item) {
-//                 var sentence = $(this).text();
-//
-//                 console.log(sentence);
-//                 sentences.push(sentence);
-//
-//                 if (index === 3) return false;
-//             });
+//             for (var i = 0; i < 3; i++ ){
+//                 sentences.push(text.substring(2, text.length -1).split('’ ‘')[i]);
+//             }
 //             return callback(sentences);
 //         });
 //     }
-//     getSentences(word, function (result) {
+//     getSentences(words, function (result) {
 //         res.json({sentences : result});
 //     })
 // });
+
+// 문장 크롤링 가능한 사이트2 - 위와 아래 중 선택해서 사용 가능
+router.get('/sentences', function(req, res, next) {
+
+    var word = req.query.word;
+
+    function getSentences(word, callback) {
+        var url = 'http://sentence.yourdictionary.com/' + word;
+        request(url, function (err, response, html) {
+            if (err) {console.log(err)};
+
+            var $ = cheerio.load(html);
+            var sentences = [];
+
+            $('.li_content').each(function (index, item) {
+                var sentence = $(this).text();
+
+                console.log(sentence);
+                sentences.push(sentence);
+
+                if (index === 3) return false;
+            });
+            return callback(sentences);
+        });
+    }
+    getSentences(word, function (result) {
+        res.json({sentences : result});
+    })
+});
 
 router.get('/imgs', function(req, res, next) {
 
