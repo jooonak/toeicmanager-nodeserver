@@ -1,4 +1,4 @@
-#toeicmanager-nodeserver
+toeicmanager-nodeserver
 
 NodeServer 기능
 
@@ -13,6 +13,8 @@ NodeServer는 페이지를 제공하지 않고 데이터만 제공하도록 Rest
 	6. natural을 활용하여 사진에서 인식된 text를 토큰화, 형태소 분석을 통해 의미있는 text만을 추출
 	7. Google Vision API를 활용한 사진에서 인식된 단어 데이터
 
+
+각 모듈의 기능
 
 chatbot.js
 
